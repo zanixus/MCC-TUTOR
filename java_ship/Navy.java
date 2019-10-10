@@ -11,8 +11,6 @@ public class Navy {
      */
 
     public static void getInput(Ship[] navy) {
-        navy[1] = new Ship();
-        navy[2] = new Ship();
         String name;
         int year, passengerCapacity, cargoCapacity;
 
