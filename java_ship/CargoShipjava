@@ -1,0 +1,50 @@
+/**
+ @author Kevin M. Mallgrave
+ */
+import java.util.Scanner;
+public class CargoShip extends Ship {
+    //instance variables
+    private int maximumPassengers;
+
+    //constructors
+    public CargoShip() {
+        this.setName("Unnamed");
+        this.setYearBuilt(2000);
+        //this.setMaximumPassengers(1000);
+    }
+
+    public CargoShip(String name, int yearBuilt, int maximumPassengers) {
+        this.setName(name);
+        this.setYearBuilt(yearBuilt);
+        this.setMaximumPassengers(maximumPassengers);
+
+    }
+
+    // getters
+    public int get() {
+        return this.maximumPassengers;
+    }
+
+    //setters
+    public void setMaximumPassengers(int maximumPassengers) {
+
+    }
+    //output methods
+    public boolean equals(CruiseShip shipObject) {
+        boolean equals = false;
+        if ((shipObject != null) && (shipObject instanceof Ship)) {
+            Ship shipInstance = (Ship)shipObject;
+            equals =
+                    super.equals(shipInstance) &&
+                            this.get() == shipObject.getMaximumPassengers();
+        }
+        return equals;
+    }
+
+    public String toString() {
+        String objectInfo = "";
+        objectInfo = super.toString() +
+                "\nShip max passengers: " + this.getMaximumPassengers();
+        return objectInfo;
+    }
+}
