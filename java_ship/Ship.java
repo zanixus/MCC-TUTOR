@@ -55,7 +55,5 @@ public class Ship {
     "\nShip year built:  " + this.getYearBuilt();
     return objectInfo;
   }
-
-
 }
 

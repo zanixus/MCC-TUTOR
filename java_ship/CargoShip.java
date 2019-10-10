@@ -4,39 +4,38 @@
 import java.util.Scanner;
 public class CargoShip extends Ship {
     //instance variables
-    private int maximumPassengers;
+    private int maximumCargo;
 
     //constructors
     public CargoShip() {
         this.setName("Unnamed");
         this.setYearBuilt(2000);
-        //this.setMaximumPassengers(1000);
+        this.setMaximumCargo(500);
     }
 
-    public CargoShip(String name, int yearBuilt, int maximumPassengers) {
+    public CargoShip(String name, int yearBuilt, int maxCargo) {
         this.setName(name);
         this.setYearBuilt(yearBuilt);
-        this.setMaximumPassengers(maximumPassengers);
-
+        this.setMaximumCargo(maxCargo);
     }
 
     // getters
-    public int get() {
-        return this.maximumPassengers;
+    public int getMaximumCargo() {
+        return this.maximumCargo;
     }
 
     //setters
-    public void setMaximumPassengers(int maximumPassengers) {
-
+    public void setMaximumCargo(int maximumCargo) {
+        this.maximumCargo = maximumCargo;
     }
     //output methods
-    public boolean equals(CruiseShip shipObject) {
+    public boolean equals(CargoShip shipObject) {
         boolean equals = false;
         if ((shipObject != null) && (shipObject instanceof Ship)) {
             Ship shipInstance = (Ship)shipObject;
             equals =
                     super.equals(shipInstance) &&
-                            this.get() == shipObject.getMaximumPassengers();
+                            this.getMaximumCargo() == shipObject.getMaximumCargo();
         }
         return equals;
     }
@@ -44,7 +43,7 @@ public class CargoShip extends Ship {
     public String toString() {
         String objectInfo = "";
         objectInfo = super.toString() +
-                "\nShip max passengers: " + this.getMaximumPassengers();
+                "\nShip max cargo: " + this.getMaximumCargo();
         return objectInfo;
     }
 }

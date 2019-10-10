@@ -23,7 +23,6 @@ public class Navy {
         System.out.println("Please enter the year of your ship.");
         year = keyboard.nextInt(); keyboard.nextLine();
         navy[0] = new Ship(name, year);
-
         System.out.println("Please enter the name of your cruise ship.");
         name = keyboard.nextLine();
         System.out.println("Please enter the year of your cruise ship.");
@@ -31,17 +30,13 @@ public class Navy {
         System.out.println("Please enter the maximum passenger capacity of your cruise ship.");
         passengerCapacity = keyboard.nextInt(); keyboard.nextLine();
         navy[1] = new CruiseShip(name, year, passengerCapacity);
-
         System.out.println("Please enter the name of your cargo ship.");
         name = keyboard.nextLine();
         System.out.println("Please enter the year of your cargo ship.");
         year = keyboard.nextInt(); keyboard.nextLine();
         System.out.println("Please enter the maximum passenger capacity of your cargo ship.");
         cargoCapacity = keyboard.nextInt(); keyboard.nextLine();
-        navy[2] = new CruiseShip(name, year, cargoCapacity);
-
-
-
+        navy[2] = new CargoShip(name, year, cargoCapacity);
     }
 
     public static void printArray(Ship[] navy) {
@@ -54,15 +49,5 @@ public class Navy {
         Ship[] navy = new Ship[3];
         getInput(navy);
         printArray(navy);
-    }
-
+    }java
 }
-
-
-
-
-
-
-
-
-Integer.parseInt(inputNumberString.substring(0,1)

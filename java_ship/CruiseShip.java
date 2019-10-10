@@ -1,6 +1,6 @@
 /**
  @author Kevin M. Mallgrave
- */
+ mv*/
 import java.util.Scanner;
 public class CruiseShip extends Ship {
   //instance variables
@@ -17,7 +17,6 @@ public class CruiseShip extends Ship {
     this.setName(name);
     this.setYearBuilt(yearBuilt);
     this.setMaximumPassengers(maximumPassengers);
-
   }
 
   // getters
@@ -27,7 +26,7 @@ public class CruiseShip extends Ship {
 
   //setters
   public void setMaximumPassengers(int maximumPassengers) {
-
+    this.maximumPassengers = maximumPassengers;
   }
   //output methods
   public boolean equals(CruiseShip shipObject) {
