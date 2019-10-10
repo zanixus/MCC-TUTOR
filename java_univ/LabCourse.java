@@ -12,18 +12,18 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
 public class LabCourse extends Course {
-//
+    //
     public LabCourse() {
         super();
-        this.setDepartment("CSC");
-        this.setCourseCost((3*120) + 50);
+        this.setDepartment("COMP");
+        this.setCourseCost(3 / 2 * 500 + 50);
     }
 
     public LabCourse(String dept, int course, int credits) {
         this.setDepartment(dept);
         this.setCourseNumber(course);
         this.setCourseCredits(credits);
-        this.setCourseCost((credits*120) + 50);
+        this.setCourseCost(credits / 2 * 500 + 50);
     }
 
     public String toString() {
@@ -44,5 +44,4 @@ public class LabCourse extends Course {
         }
         return isEqual;
     }
-
 }

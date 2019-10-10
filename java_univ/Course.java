@@ -22,17 +22,17 @@ public class Course {
 // Constructors
 //
     public Course() {
-        this.setDepartment("0");
-        this.setCourseNumber(0);
-        this.setCourseCredits(0);
-        this.setCourseCost(0);
+        this.setDepartment("unknown");
+        this.setCourseNumber(100);
+        this.setCourseCredits(3);
+        this.setCourseCost(3 / 2 * 500);
     }
 
     public Course(String dept, int course, int credits) {
         this.setDepartment(dept);
         this.setCourseNumber(course);
         this.setCourseCredits(credits);
-        this.setCourseCost(credits*120);
+        this.setCourseCost(credits / 2 * 500);
     }
 // Getter methods
 //
@@ -53,12 +53,12 @@ public class Course {
     }
 
     public String toString() {
-        DecimalFormat usd = new DecimalFormat ("'$'0.00");
+        DecimalFormat dollars = new DecimalFormat ("'$'0.00");
         String objectInfo;
         objectInfo = "\nDepartment:      " + this.getDepartment()
                 +    "\nCourse number:   " + this.getCourseNumber()
                 +    "\nCourse credits:  " + this.getCourseCredits()
-                +    "\nCourse cost:     " + usd.format(this.getCourseCost());
+                +    "\nCourse cost:     " + dollars.format(this.getCourseCost());
         return objectInfo;
     }
 
@@ -66,8 +66,8 @@ public class Course {
         boolean isEqual = false;
         isEqual =(this.getDepartment() == collegeCourse.getDepartment()
                 && this.getCourseNumber() == collegeCourse.getCourseNumber()
-                &&this.getCourseCredits() == collegeCourse.getCourseCredits()
-                &&this.getCourseCost() == collegeCourse.getCourseCost()
+                && this.getCourseCredits() == collegeCourse.getCourseCredits()
+                && this.getCourseCost() == collegeCourse.getCourseCost()
         );
         return isEqual;
     }
@@ -79,33 +79,33 @@ public class Course {
         boolean isValid = false;
         while (isValid == false) {
             switch (department) {
-                case "ENG":
+                case "ENGL":
                     isValid = true;
                     break;
-                case "MTH":
+                case "MATH":
                     isValid = true;
                     break;
-                case "CSC":
+                case "HIST":
                     isValid = true;
                     break;
-                case "HST":
+                case "COMP":
                     isValid = true;
                     break;
-                case "HUM":
+                case "HUMN":
                     isValid = true;
                     break;
-                case "SCI":
+                case "SCIE":
                     isValid = true;
                     break;
-                case "LAN":
+                case "LANG":
                     isValid = true;
                     break;
-                case "PHY":
+                case "PHYS":
                     isValid = true;
                     break;
                 default:
                     System.out.println("Please enter a valid department.");
-                    System.out.println("Department must be ENG, MTH, CSC, HST, HUM, SCI, LAN, or PHY.");
+                    System.out.println("Department must be ENGL, MATH, COMP, HIST, HUMN, SCIE, LANG, PHYS.");
                     department = keyboard.nextLine().toUpperCase();
                     break;
             }
@@ -115,7 +115,7 @@ public class Course {
 
     public void setCourseNumber(int courseNumber) {
         Scanner keyboard = new Scanner(System.in);
-        while  (courseNumber < 100 || courseNumber > 499) {
+        while  (courseNumber < 100 || courseNumber > 399) {
             System.out.println("Please enter a valid course number, 100-499: ");
             courseNumber = keyboard.nextInt();
             keyboard.nextLine();
@@ -125,18 +125,17 @@ public class Course {
 
     public void setCourseCredits(int courseCredits) {
         Scanner keyboard = new Scanner(System.in);
-        while  ((courseCredits < 1 || courseCredits > 4)
-                || (courseCredits == 2)
-        ){
-            System.out.println("Please enter a valid number of credits per course, 1, 3 or 4:");
+        while  ((courseCredits < 3 || courseCredits > 6) || (courseCredits == 5)
+        )
+        {
+            System.out.println("Please enter a valid number of credits per course, 3, 4 or 6:");
             courseCredits = keyboard.nextInt();
             keyboard.nextLine();
         }
         this.courseCredits = courseCredits;
     }
 
-    public void setCourseCost(double courseCost) {
-        this.courseCost = courseCost;
+    public void setCourseCost(int cost) {
+        this.courseCost = cost;
     }
-
 }
