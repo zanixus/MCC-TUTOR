@@ -3,7 +3,7 @@ public class PageException extends Exception {
         super("Exception: incorrect page entered.");
     }
 
-    public PageException(String message){
+    public PageException(String message) {
         super(message);
     }
 }
