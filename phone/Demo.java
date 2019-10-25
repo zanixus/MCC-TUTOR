@@ -50,13 +50,30 @@ public class Demo {
         return newGuy;
     }
 
-    static void roster(Employee[] wageslaves) {
-        //print employee info here and average salary...
+    static void unionHall(Employee[] teamsters) {
+        double[] megabux = new double[teamsters.length];
+        String[] hardWorkingUnionMen = new String[teamsters.length];
+        double sum = 0;
+        for (int i = 0; i < teamsters.length; i++) {
+            sum = sum + teamsters[i].getSalary();
+            hardWorkingUnionMen[i] = teamsters[i].getName();
+            megabux[i] = teamsters[i].getSalary();
+            System.out.printf("Employee: %s | Salary: %2f | Phone Number : %d\n",
+                    teamsters[i].getName(),teamsters[i].getSalary(), teamsters[i].getPhoneNumber());
+        }
+        double average = sum / teamsters.length;
+        for (int i = 0; i < teamsters.length; i++) {
+            if (megabux[i] > average) {
+                System.out.printf("%s's salary of $%.2f is above average.\n", hardWorkingUnionMen[i], megabux[i]);
+            } else {
+                System.out.printf("%s's salary of $%.2f is below average.\n", hardWorkingUnionMen[i], megabux[i]);
+            }
+        }
     }
 
     public static void main(String[] args) {
         boolean validInput = false;
-        int size = 1;
+        int size = 2;
         Employee spacelySpaceSprockets[] = new Employee[size];
         for (int i = 0; i < spacelySpaceSprockets.length; i++) {
             validInput = false;
@@ -70,5 +87,6 @@ public class Demo {
                 }
             }
         }
+        unionHall(spacelySpaceSprockets);
     }
 }

@@ -10,9 +10,9 @@ public class Employee extends Person {
     }
 
     public Employee(String name, double salary, int phoneNumber) {
-        super();
-        setSalary(salary);
-        setPhoneNumber(phoneNumber);
+        this.setName(name);
+        this.setSalary(salary);
+        this.setPhoneNumber(phoneNumber);
     }
 
     public void setSalary(double s) {
