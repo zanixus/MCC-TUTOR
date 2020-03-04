@@ -14,7 +14,7 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 public class Course {
 // Instance variables
-//
+    static Scanner keyboard = new Scanner(System.in);
     private String department;
     private int courseNumber;
     private int courseCredits;
@@ -53,29 +53,24 @@ public class Course {
     }
 
     public String toString() {
-        DecimalFormat dollars = new DecimalFormat ("'$'0.00");
-        String objectInfo;
-        objectInfo = "\nDepartment:      " + this.getDepartment()
+        return "\nDepartment:      " + this.getDepartment()
                 +    "\nCourse number:   " + this.getCourseNumber()
                 +    "\nCourse credits:  " + this.getCourseCredits()
-                +    "\nCourse cost:     " + dollars.format(this.getCourseCost());
-        return objectInfo;
+                +    "\nCourse cost:     " + this.getCourseCost();
     }
 
     public boolean equals(Course collegeCourse) {
-        boolean isEqual = false;
-        isEqual =(this.getDepartment() == collegeCourse.getDepartment()
+        return this.getDepartment() == collegeCourse.getDepartment()
                 && this.getCourseNumber() == collegeCourse.getCourseNumber()
                 && this.getCourseCredits() == collegeCourse.getCourseCredits()
-                && this.getCourseCost() == collegeCourse.getCourseCost()
-        );
-        return isEqual;
+                && this.getCourseCost() == collegeCourse.getCourseCost();
     }
     //
 // Setter methods
 
     public void setDepartment(String department) {
         Scanner keyboard = new Scanner(System.in);
+        System.out.println(department);
         boolean isValid = false;
         while (isValid == false) {
             switch (department) {
@@ -114,8 +109,8 @@ public class Course {
     }
 
     public void setCourseNumber(int courseNumber) {
-        Scanner keyboard = new Scanner(System.in);
-        while  (courseNumber < 100 || courseNumber > 399) {
+
+        while  (courseNumber < 1 || courseNumber > 399) {
             System.out.println("Please enter a valid course number, 100-499: ");
             courseNumber = keyboard.nextInt();
             keyboard.nextLine();
@@ -125,8 +120,7 @@ public class Course {
 
     public void setCourseCredits(int courseCredits) {
         Scanner keyboard = new Scanner(System.in);
-        while  ((courseCredits < 3 || courseCredits > 6) || (courseCredits == 5)
-        )
+        while  ( (courseCredits < 3 || courseCredits > 6) || (courseCredits == 5)  )
         {
             System.out.println("Please enter a valid number of credits per course, 3, 4 or 6:");
             courseCredits = keyboard.nextInt();

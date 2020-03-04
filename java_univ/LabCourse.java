@@ -16,14 +16,15 @@ public class LabCourse extends Course {
     public LabCourse() {
         super();
         this.setDepartment("COMP");
-        this.setCourseCost(3 / 2 * 500 + 50);
+        this.setCourseCost(3 / 2 * 500 + 100);
     }
 
     public LabCourse(String dept, int course, int credits) {
+        System.out.println(dept);
         this.setDepartment(dept);
         this.setCourseNumber(course);
         this.setCourseCredits(credits);
-        this.setCourseCost(credits / 2 * 500 + 50);
+        this.setCourseCost(credits / 2 * 500 + 100);
     }
 
     public String toString() {

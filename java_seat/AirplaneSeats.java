@@ -144,5 +144,6 @@ public class AirplaneSeats {
         while (quit == false) {
             quit = seatMenu(plane, x, y);
         }
+        exit(0);
     }
 }

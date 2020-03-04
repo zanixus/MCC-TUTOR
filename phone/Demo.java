@@ -58,7 +58,7 @@ public class Demo {
             sum = sum + teamsters[i].getSalary();
             hardWorkingUnionMen[i] = teamsters[i].getName();
             megabux[i] = teamsters[i].getSalary();
-            System.out.printf("Employee: %s | Salary: %2f | Phone Number : %d\n",
+            System.out.printf("Employee: %s | Salary: %.2f | Phone Number : %d\n",
                     teamsters[i].getName(),teamsters[i].getSalary(), teamsters[i].getPhoneNumber());
         }
         double average = sum / teamsters.length;

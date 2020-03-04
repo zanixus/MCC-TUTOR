@@ -58,7 +58,6 @@ public class array2D {
             System.out.printf("\n");
             for (int j = 0; j < array2d.length; j++) {
                 System.out.printf("%2d    ", array2d[i][j]);
-
             }
         }
         System.out.printf("\n");

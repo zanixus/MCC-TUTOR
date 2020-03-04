@@ -29,13 +29,12 @@ public class CruiseShip extends Ship {
     this.maximumPassengers = maximumPassengers;
   }
   //output methods
+
   public boolean equals(CruiseShip shipObject) {
     boolean equals = false;
     if ((shipObject != null) && (shipObject instanceof Ship)) {
       Ship shipInstance = (Ship)shipObject;
-      equals =
-              super.equals(shipInstance) &&
-               this.getMaximumPassengers() == shipObject.getMaximumPassengers();
+      equals = super.equals(shipInstance) && this.getMaximumPassengers() == shipObject.getMaximumPassengers();
     }
     return equals;
   }
