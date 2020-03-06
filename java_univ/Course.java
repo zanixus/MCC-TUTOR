@@ -75,26 +75,12 @@ public class Course {
         while (isValid == false) {
             switch (department) {
                 case "ENGL":
-                    isValid = true;
-                    break;
                 case "MATH":
-                    isValid = true;
-                    break;
                 case "HIST":
-                    isValid = true;
-                    break;
                 case "COMP":
-                    isValid = true;
-                    break;
                 case "HUMN":
-                    isValid = true;
-                    break;
                 case "SCIE":
-                    isValid = true;
-                    break;
                 case "LANG":
-                    isValid = true;
-                    break;
                 case "PHYS":
                     isValid = true;
                     break;
